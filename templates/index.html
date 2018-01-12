@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="nanyoullm.github.io" />
-    <title>集团侧模型监控</title>
+    <title>模型监控</title>
 
-    <link rel="shortcut icon" href="/static/img/mucfc.ico">
+    <link rel="shortcut icon" href="/static/img/lim2.png">
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/bootstrap-select.css" rel="stylesheet">
     <script src="/static/js/jquery.min.js"></script>
@@ -21,16 +21,16 @@
 <nav class="navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href=""><img alt="" src="/static/img/lim.png" height=50px></a>
+            <a style="height: 100%; width: 10%" href=""><img alt="" src="/static/img/lim2.png" height=50px width=70px></a>
         </div>
 
         <div class="form-div1" style="float: right; height: 100%; width: 700px;">
-            <div style="height: 100%; margin-top: 7px;">
+            <div style="height: 100%; margin-top: 7px; margin-left: 90px">
                 <font color="black">模型选择：</font>
                 <select id="model" name="model" class="selectpicker" onchange="selectAction()">
-                    <option value="A4">A4分</option>
-                    <option value="A5">A5分</option>
-                    <option value="Wo">沃信用分</option>
+                    <option value="A">A分</option>
+                    <option value="B">B分</option>
+                    <option value="W">W分</option>
                 </select>
 
                 <font color="black" style="margin-left: 10px">账期选择：</font>
@@ -296,7 +296,7 @@
         var modelSelected = $('#model').val();
         var periodSelected = $('#period').val();
         $.post(
-            '/select',
+            '/selected',
             {model: modelSelected, period: periodSelected},
             function (data) {
 
@@ -357,7 +357,7 @@
         var modelLegend = jsonData['model_legend'];
         var modelAxis = jsonData['model_axis'];
         var modelType = jsonData['model_type'];
-        var modelTitle = 'A5全国分布';
+        var modelTitle = 'A分全国分布';
 
         // 特征分布渲染参数
         var featureName = jsonData['feature_name'];

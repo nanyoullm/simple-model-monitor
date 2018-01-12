@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import json
 
-score_names = {'A4': 'A4分', 'A5': 'A5分', 'Wo': '沃信用分'}
+score_names = {'A': 'A分', 'B': 'B分', 'W': 'W分'}
 
 
 class Mysql(object):
@@ -62,7 +62,7 @@ def model_data_for_front_begin(sql, connect, periods):
     model_data = []
     model_legend = []
     model_type = []
-    model_selected = 'A5'
+    model_selected = 'A'
     generate_show_data(period_show, model_data, model_legend, model_type, distribution)
     # 如果是list，则需要转变成json格式传递
     make_json([model_data, model_legend, model_type, model_axis, periods, model_selected, period_show])

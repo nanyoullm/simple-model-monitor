@@ -15,3 +15,5 @@ create table test.feature_statistic (
   counts int
 ) charset=utf8;
 
+DROP TABLE test.model_statistic;
+DROP TABLE test.feature_statistic;

@@ -12,8 +12,8 @@ from utils import feature_data_for_front_form
 
 
 app = Flask(__name__)
-mysql = Mysql('127.0.0.1', 'unicom')
-score_names = {'A4': 'A4分', 'A5': 'A5分', 'Wo': '沃信用分'}
+mysql = Mysql('127.0.0.1', 'test')
+score_names = {'A': 'A分', 'B': 'B分', 'W': 'W分'}
 
 
 @app.route('/')
@@ -36,12 +36,12 @@ def hello_world():
 
     # 获取绘制模型分布的渲染参数
     sql = 'select score, counts from model_statistic ' \
-          'where period=\'{}\' and score_name=\'{}\''.format(period_show, 'A5')
+          'where period=\'{}\' and score_name=\'{}\''.format(period_show, 'A')
     model_data = model_data_for_front_begin(sql, connect, periods)
 
     # 获取绘制变量分布的渲染参数
     sql = 'select feature_name, feature_value, counts from feature_statistic ' \
-          'where period=\'{}\' and score_name=\'{}\''.format(period_show, 'A5')
+          'where period=\'{}\' and score_name=\'{}\''.format(period_show, 'A')
     feature_data = feature_data_for_front_begin(sql, connect, periods)
 
     connect.close()
@@ -65,7 +65,7 @@ def hello_world():
     return render_template('index.html', **locals())
 
 
-@app.route('/select', methods=['POST'])
+@app.route('/selected', methods=['POST'])
 def response_form():
     connect = mysql.connect()
     model_selected = request.form['model'].encode('utf-8')
@@ -100,4 +100,4 @@ def response_form():
 
 
 if __name__ == '__main__':
-    app.run(port=9000)
+    app.run(port=7000)

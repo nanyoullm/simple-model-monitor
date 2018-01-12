@@ -3,7 +3,7 @@ import pandas as pd
 from utils import Mysql
 from utils import generate_fake_data
 
-mysql = Mysql(host='127.0.0.1', db='unicom')
+mysql = Mysql(host='127.0.0.1', db='test')
 
 x_axis_a4 = range(1, 101)
 x_axis_a5 = range(1, 151)
@@ -14,8 +14,8 @@ x_axis_a5_features = range(0, 8)
 x_axis_wo_features = range(0, 6)
 feature_values = range(-5, 20, 6)
 periods = ['201710', '201709', '201708']
-score_axis = {'A4': x_axis_a4, 'A5': x_axis_a5, 'Wo': x_axis_wo}
-model_features = {'A4': x_axis_a4_features, 'A5': x_axis_a5_features, 'Wo': x_axis_wo_features}
+score_axis = {'A': x_axis_a4, 'B': x_axis_a5, 'W': x_axis_wo}
+model_features = {'A': x_axis_a4_features, 'B': x_axis_a5_features, 'W': x_axis_wo_features}
 
 
 def data_for_model():
