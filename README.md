@@ -54,4 +54,4 @@ flask是一个很轻的python web框架，上手很快，很适合小型的web�
 `python server.py`
 
 ## 博客主页
-[Lim的博客](nanyoullm.github.io)
+[Lim的博客](https://nanyoullm.github.io/)
