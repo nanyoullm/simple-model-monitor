@@ -10,12 +10,12 @@
 ## 界面展示
 - 可选择不同的评分查看分布，下部分是特征的分布，可拖拽查看；
 <br>
-<iframe src="https://github.com/nanyoullm/simple-model-monitor/blob/master/img/monitor1.gif?raw=true">
+<img src="https://github.com/nanyoullm/simple-model-monitor/blob/master/img/monitor1.gif?raw=true">
 <br>
 
 - 可选择不同账期的同一评分进行对比，下部分是特征的分布对比，可拖拽查看对比；
 <br>
-<iframe src="https://github.com/nanyoullm/simple-model-monitor/blob/master/img/monitor2.gif?raw=true">
+<img src="https://github.com/nanyoullm/simple-model-monitor/blob/master/img/monitor2.gif?raw=true">
 <br>
 
 ## 技术栈
@@ -30,4 +30,10 @@ Python + Mysql + Flask + Ajax + Echarts
 
 ## 使用
 - 安装本地mysql
+自行安装mysql数据库，默认代码使用scheme: test
+
 - 生成伪数据
+运行代码
+`
+python save_fake_data.py
+`
